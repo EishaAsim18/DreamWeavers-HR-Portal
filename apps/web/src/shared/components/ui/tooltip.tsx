@@ -1,0 +1,29 @@
+import * as TooltipPrimitive from '@radix-ui/react-tooltip'
+import * as React from 'react'
+import { cn } from '@/shared/lib/utils'
+
+const TooltipProvider = TooltipPrimitive.Provider
+
+const Tooltip = TooltipPrimitive.Root
+
+const TooltipTrigger = TooltipPrimitive.Trigger
+
+const TooltipContent = React.forwardRef<
+  React.ComponentRef<typeof TooltipPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
+>(({ className, sideOffset = 4, ...props }, ref) => (
+  <TooltipPrimitive.Portal>
+    <TooltipPrimitive.Content
+      ref={ref}
+      sideOffset={sideOffset}
+      className={cn(
+        'z-[var(--dw-z-tooltip)] overflow-hidden rounded-md bg-[var(--dw-color-ink-primary)] px-3 py-1.5 text-xs text-[var(--dw-color-surface-base)] animate-in fade-in-0 zoom-in-95',
+        className,
+      )}
+      {...props}
+    />
+  </TooltipPrimitive.Portal>
+))
+TooltipContent.displayName = TooltipPrimitive.Content.displayName
+
+export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger }

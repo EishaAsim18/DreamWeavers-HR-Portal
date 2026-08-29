@@ -1,0 +1,62 @@
+import type { Notification } from '@/shared/types'
+
+export const MOCK_NOTIFICATIONS: Notification[] = [
+  {
+    id: 'notif_1',
+    category: 'approval',
+    title: 'Leave request from Bilal Ahmed',
+    description: 'Annual leave · Jul 14 – Jul 18',
+    createdAt: new Date(Date.now() - 5 * 60_000).toISOString(),
+    read: false,
+    href: '/attendance',
+    actions: [
+      { id: 'approve', label: 'Approve', variant: 'primary' },
+      { id: 'view', label: 'View', variant: 'ghost' },
+    ],
+  },
+  {
+    id: 'notif_2',
+    category: 'task',
+    title: 'Task assigned to you',
+    description: 'Review Q3 onboarding documentation',
+    createdAt: new Date(Date.now() - 2 * 60 * 60_000).toISOString(),
+    read: false,
+    href: '/tasks',
+  },
+  {
+    id: 'notif_4',
+    category: 'document',
+    title: 'Document expiring soon',
+    description: 'Employee handbook v3.2 · expires in 7 days',
+    createdAt: new Date(Date.now() - 48 * 60 * 60_000).toISOString(),
+    read: true,
+    href: '/documents',
+  },
+  {
+    id: 'notif_5',
+    category: 'attendance',
+    title: 'Attendance correction approved',
+    description: 'Your check-out time for Tuesday was updated successfully.',
+    createdAt: new Date(Date.now() - 6 * 60 * 60_000).toISOString(),
+    read: false,
+    href: '/attendance',
+  },
+  {
+    id: 'notif_6',
+    category: 'system',
+    title: 'Security review completed',
+    description: 'No unusual account activity was detected this week.',
+    createdAt: new Date(Date.now() - 3 * 24 * 60 * 60_000).toISOString(),
+    read: true,
+    href: '/settings',
+  },
+  {
+    id: 'notif_7',
+    category: 'task',
+    title: 'Task review requested',
+    description: 'Employee Handbook Update 2026 is ready for review.',
+    createdAt: new Date(Date.now() - 10 * 60 * 60_000).toISOString(),
+    read: false,
+    href: '/tasks/task_cal_2',
+  },
+]

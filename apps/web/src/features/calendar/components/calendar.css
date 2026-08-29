@@ -1,0 +1,465 @@
+/* ── FullCalendar Premium Override Styles ────────────────────────────────── */
+
+.dw-calendar-wrap .fc {
+  --fc-border-color: var(--dw-color-border-default);
+  --fc-today-bg-color: rgba(74, 124, 146, 0.05);
+  --fc-page-bg-color: transparent;
+  --fc-neutral-bg-color: var(--dw-color-surface-sunken);
+  --fc-neutral-text-color: var(--dw-color-ink-tertiary);
+  --fc-event-border-color: transparent;
+  --fc-event-bg-color: transparent;
+  --fc-list-event-hover-bg-color: var(--dw-color-surface-sunken);
+  --fc-highlight-color: rgba(74, 124, 146, 0.07);
+  --fc-non-business-color: rgba(0, 0, 0, 0.012);
+  font-family: inherit;
+  font-size: 13px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Hide default toolbar */
+.dw-calendar-wrap .fc .fc-header-toolbar { display: none !important; }
+
+/* ── Scrollgrid ─────────────────────────────────────────────────────────── */
+.dw-calendar-wrap .fc .fc-scrollgrid {
+  border-color: var(--dw-color-border-default);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--dw-shadow-sm);
+}
+
+.dw-calendar-wrap .fc .fc-scrollgrid-section-header td,
+.dw-calendar-wrap .fc .fc-scrollgrid-section-body td {
+  border-color: var(--dw-color-border-default);
+}
+
+.dw-calendar-wrap .fc .fc-scrollgrid td:last-child {
+  border-right: none;
+}
+
+/* ── Column headers ─────────────────────────────────────────────────────── */
+.dw-calendar-wrap .fc .fc-col-header {
+  background: var(--dw-color-surface-sunken);
+  border-bottom: 1px solid var(--dw-color-border-default);
+}
+
+.dw-calendar-wrap .fc .fc-col-header-cell {
+  border-color: var(--dw-color-border-default);
+  padding: 10px 0;
+}
+
+.dw-calendar-wrap .fc .fc-col-header-cell-cushion {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dw-color-ink-tertiary);
+  text-decoration: none !important;
+  padding: 4px 8px;
+}
+
+/* ── Day cells ──────────────────────────────────────────────────────────── */
+.dw-calendar-wrap .fc .fc-daygrid-day {
+  transition: background 120ms ease;
+  min-height: 100px;
+}
+
+.dw-calendar-wrap .fc .fc-daygrid-day:hover {
+  background: rgba(74, 124, 146, 0.025);
+}
+
+.dw-calendar-wrap .fc .fc-daygrid-day-number {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dw-color-ink-secondary);
+  padding: 8px 10px;
+  text-decoration: none !important;
+  border-radius: 8px;
+  transition: all 130ms ease;
+  line-height: 1;
+}
+
+.dw-calendar-wrap .fc .fc-daygrid-day-number:hover {
+  color: var(--dw-color-brand-primary);
+  background: var(--dw-color-brand-primary-muted);
+}
+
+.dw-calendar-wrap .fc .fc-day-today .fc-daygrid-day-number {
+  background: var(--dw-color-brand-primary);
+  color: white !important;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(74, 124, 146, 0.4);
+}
+
+.dw-calendar-wrap .fc .fc-day-today {
+  background: var(--fc-today-bg-color) !important;
+  position: relative;
+}
+
+.dw-calendar-wrap .fc .fc-day-today::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--dw-color-brand-primary);
+  opacity: 0.6;
+}
+
+.dw-calendar-wrap .fc .fc-day-other .fc-daygrid-day-number {
+  opacity: 0.3;
+}
+
+/* ── Events ─────────────────────────────────────────────────────────────── */
+.dw-calendar-wrap .fc .fc-event {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 1px 3px !important;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.dw-calendar-wrap .fc .fc-event:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.97);
+}
+
+.dw-calendar-wrap .fc .fc-event:focus {
+  box-shadow: none !important;
+  outline: none;
+}
+
+.dw-calendar-wrap .fc .fc-event-main {
+  padding: 0 !important;
+  overflow: visible;
+}
+
+.dw-calendar-wrap .fc .fc-daygrid-event-dot { display: none; }
+
+.dw-calendar-wrap .fc .fc-daygrid-event-harness {
+  margin-top: 2px;
+}
+
+/* ── More link ──────────────────────────────────────────────────────────── */
+.dw-calendar-wrap .fc .fc-daygrid-more-link {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--dw-color-brand-primary);
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: var(--dw-color-brand-primary-muted);
+  margin: 1px 4px;
+  transition: all 130ms ease;
+}
+
+.dw-calendar-wrap .fc .fc-daygrid-more-link:hover {
+  background: var(--dw-color-brand-primary);
+  color: white;
+}
+
+/* ── Popover ────────────────────────────────────────────────────────────── */
+.dw-calendar-wrap .fc .fc-popover {
+  border: 1px solid var(--dw-color-border-default);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+  background: var(--dw-color-surface-base);
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.dw-calendar-wrap .fc .fc-popover-header {
+  background: var(--dw-color-surface-sunken);
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--dw-color-ink-primary);
+  border-bottom: 1px solid var(--dw-color-border-default);
+}
+
+.dw-calendar-wrap .fc .fc-popover-close {
+  color: var(--dw-color-ink-tertiary);
+  opacity: 1;
+  font-size: 14px;
+}
+
+.dw-calendar-wrap .fc .fc-popover-body {
+  padding: 8px;
+}
+
+/* ── Time grid ──────────────────────────────────────────────────────────── */
+.dw-calendar-wrap .fc .fc-timegrid-slot {
+  height: 44px;
+  border-color: var(--dw-color-border-default);
+}
+
+.dw-calendar-wrap .fc .fc-timegrid-slot-minor {
+  border-color: transparent;
+}
+
+.dw-calendar-wrap .fc .fc-timegrid-axis {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--dw-color-ink-tertiary);
+  letter-spacing: 0.02em;
+  padding-right: 10px;
+}
+
+.dw-calendar-wrap .fc .fc-timegrid-event {
+  border-radius: 8px;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.dw-calendar-wrap .fc .fc-timegrid-event:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+
+/* ── List view ──────────────────────────────────────────────────────────── */
+.dw-calendar-wrap .fc .fc-list {
+  border-color: var(--dw-color-border-default);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--dw-shadow-sm);
+}
+
+.dw-calendar-wrap .fc .fc-list-day-cushion {
+  background: var(--dw-color-surface-sunken);
+  padding: 10px 18px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dw-color-ink-secondary);
+  border-bottom: 1px solid var(--dw-color-border-default);
+}
+
+.dw-calendar-wrap .fc .fc-list-event td {
+  padding: 10px 18px;
+  border-color: var(--dw-color-border-default);
+  transition: background 100ms ease;
+}
+
+.dw-calendar-wrap .fc .fc-list-event:hover td {
+  background: var(--dw-color-surface-sunken);
+  cursor: pointer;
+}
+
+.dw-calendar-wrap .fc .fc-list-event-time {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dw-color-ink-tertiary);
+  white-space: nowrap;
+}
+
+.dw-calendar-wrap .fc .fc-list-event-dot {
+  display: none;
+}
+
+/* ── Selection highlight ────────────────────────────────────────────────── */
+.dw-calendar-wrap .fc .fc-highlight {
+  background: rgba(74, 124, 146, 0.08);
+  border-radius: 8px;
+}
+
+/* ── Now indicator ──────────────────────────────────────────────────────── */
+.dw-calendar-wrap .fc .fc-timegrid-now-indicator-line {
+  border-color: var(--dw-color-brand-primary);
+  border-width: 2px;
+  box-shadow: 0 0 6px rgba(74, 124, 146, 0.4);
+}
+
+.dw-calendar-wrap .fc .fc-timegrid-now-indicator-arrow {
+  border-top-color: var(--dw-color-brand-primary);
+  border-bottom-color: var(--dw-color-brand-primary);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+.dw-calendar-wrap .fc ::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.dw-calendar-wrap .fc ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dw-calendar-wrap .fc ::-webkit-scrollbar-thumb {
+  background: var(--dw-color-border-default);
+  border-radius: 2px;
+}
+
+/* ── Dark mode ──────────────────────────────────────────────────────────── */
+.dark .dw-calendar-wrap .fc {
+  --fc-border-color: var(--dw-color-border-default);
+  --fc-today-bg-color: rgba(74, 124, 146, 0.1);
+  --fc-neutral-bg-color: var(--dw-color-surface-sunken);
+  --fc-list-event-hover-bg-color: var(--dw-color-surface-sunken);
+}
+
+.dark .dw-calendar-wrap .fc .fc-day-today .fc-daygrid-day-number {
+  background: var(--dw-color-brand-primary);
+  color: white !important;
+}
+
+/* ── Calendar page animations ───────────────────────────────────────────── */
+
+@keyframes calendar-title-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.calendar-title-shimmer {
+  background-size: 200% auto;
+  animation: calendar-title-shimmer 6s ease-in-out infinite;
+}
+
+@keyframes calendar-rainbow-slide {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.calendar-rainbow-bar {
+  background: linear-gradient(
+    90deg,
+    #4a7c92 0%,
+    #7c3aed 20%,
+    #0891b2 40%,
+    #10b981 60%,
+    #f97316 80%,
+    #4a7c92 100%
+  );
+  background-size: 200% 100%;
+  animation: calendar-rainbow-slide 8s linear infinite;
+}
+
+@keyframes calendar-today-pulse {
+  0%, 100% { box-shadow: 0 2px 8px rgba(74, 124, 146, 0.35); }
+  50% { box-shadow: 0 2px 16px rgba(74, 124, 146, 0.55), 0 0 0 4px rgba(74, 124, 146, 0.12); }
+}
+
+.dw-calendar-wrap .fc .fc-day-today .fc-daygrid-day-number {
+  animation: calendar-today-pulse 3s ease-in-out infinite;
+}
+
+/* Weekend tint */
+.dw-calendar-wrap .fc .fc-day-sat,
+.dw-calendar-wrap .fc .fc-day-sun {
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.03) 0%, transparent 100%) !important;
+}
+
+/* Holiday background stripe */
+.dw-calendar-wrap .fc .fc-bg-event {
+  opacity: 1 !important;
+}
+
+.dw-calendar-wrap .fc .fc-bg-event .fc-event-title {
+  font-style: italic;
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* Event hover glow */
+.dw-calendar-wrap .fc .fc-event:hover {
+  transform: translateY(-2px) scale(1.01);
+  filter: brightness(1.02);
+  z-index: 5;
+}
+
+/* Shimmer on urgent events */
+@keyframes event-urgent-shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.dw-calendar-wrap .fc-event-urgent {
+  animation: event-urgent-shimmer 2s ease-in-out infinite;
+}
+
+/* Calendar glass panel wrapper */
+.calendar-glass-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(237, 245, 248, 0.5) 50%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
+  backdrop-filter: blur(12px);
+}
+
+.dark .calendar-glass-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.85) 0%,
+    rgba(30, 58, 74, 0.4) 50%,
+    rgba(15, 23, 42, 0.8) 100%
+  );
+}
+
+/* Skeleton shimmer */
+@keyframes calendar-skeleton-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.calendar-skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--dw-color-border-default) 0%,
+    var(--dw-color-surface-sunken) 50%,
+    var(--dw-color-border-default) 100%
+  );
+  background-size: 200% 100%;
+  animation: calendar-skeleton-shimmer 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calendar-title-shimmer,
+  .calendar-rainbow-bar,
+  .dw-calendar-wrap .fc .fc-day-today .fc-daygrid-day-number,
+  .dw-calendar-wrap .fc-event-urgent,
+  .calendar-skeleton-shimmer {
+    animation: none !important;
+  }
+}
+
+/* Phone layouts favour the agenda view, while keeping every FullCalendar view
+   usable if the user explicitly switches to it. */
+@media (max-width: 639px) {
+  .dw-calendar-wrap .fc {
+    font-size: 0.75rem;
+  }
+
+  .dw-calendar-wrap .fc .fc-list-day-cushion {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .dw-calendar-wrap .fc .fc-list-event td {
+    padding: 0.7rem 0.4rem;
+  }
+
+  .dw-calendar-wrap .fc .fc-list-event-time {
+    width: 4.25rem;
+    white-space: normal;
+  }
+
+  .dw-calendar-wrap .fc .fc-col-header-cell-cushion {
+    padding: 0.55rem 0.15rem;
+    font-size: 0.62rem;
+  }
+
+  .dw-calendar-wrap .fc .fc-daygrid-day-number {
+    margin: 0.2rem;
+    padding: 0.2rem;
+  }
+
+  .dw-calendar-wrap .fc .fc-daygrid-day-frame {
+    min-height: 4.5rem;
+  }
+
+  .dw-calendar-wrap .fc .fc-event {
+    margin-inline: 1px;
+  }
+}

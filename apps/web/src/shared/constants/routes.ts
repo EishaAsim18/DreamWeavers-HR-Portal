@@ -1,0 +1,25 @@
+export const ROUTES = {
+  login: '/login',
+  signup: '/signup',
+  forgotPassword: '/forgot-password',
+  resetPassword: '/reset-password',
+  acceptInvite: '/accept-invite',
+  home: '/',
+  dashboard: '/dashboard',
+  employees: '/employees',
+  employeeDetail: (id: string) => `/employees/${id}` as const,
+  attendance: '/attendance',
+  tasks: '/tasks',
+  taskDetail: (id: string) => `/tasks/${id}` as const,
+  calendar: '/calendar',
+  teams: '/teams',
+  teamDetail: (id: string) => `/teams/${id}` as const,
+  documents: '/documents',
+  reports: '/reports',
+  notifications: '/notifications',
+  adminManagement: '/admin-management',
+  settings: '/settings',
+  profile: '/profile',
+} as const
+
+export type RoutePath = (typeof ROUTES)[keyof typeof ROUTES]

@@ -1,0 +1,149 @@
+/* DreamWeavers Design System — CSS Custom Properties */
+
+:root {
+  /* Brand */
+  --dw-color-brand-primary: #4a7c92;
+  --dw-color-brand-primary-hover: #3d6779;
+  --dw-color-brand-primary-active: #325a68;
+  --dw-color-brand-primary-muted: #ddedf2;
+  --dw-color-brand-primary-subtle: #edf5f8;
+  --dw-color-brand-on-primary: #ffffff;
+  --dw-color-brand-gradient: linear-gradient(135deg, #4a7c92 0%, #6bafcc 50%, #3d6779 100%);
+
+  /* Sidebar — light teal (brand family) */
+  --dw-sidebar-bg: #c8d8e0;
+  --dw-sidebar-bg-end: #d4e3ea;
+  --dw-sidebar-ink: #0c1a24;
+  --dw-sidebar-ink-dim: #1e3a4a;
+  --dw-sidebar-ink-tertiary: #3d6779;
+  --dw-sidebar-hover: rgba(74, 124, 146, 0.1);
+  --dw-sidebar-active-bg: rgba(74, 124, 146, 0.18);
+  --dw-sidebar-active-ink: #3d6779;
+  --dw-sidebar-border: rgba(74, 124, 146, 0.16);
+  --dw-sidebar-search-bg: rgba(255, 255, 255, 0.45);
+  --dw-sidebar-search-border: rgba(74, 124, 146, 0.14);
+  --dw-sidebar-profile-bg: rgba(255, 255, 255, 0.42);
+  --dw-sidebar-profile-border: rgba(74, 124, 146, 0.14);
+
+  /* Navbar — lighter teal derived from brand primary (#4a7c92) */
+  --dw-navbar-bg: #d8e6ec;
+  --dw-navbar-bg-end: #e6f0f4;
+  --dw-navbar-border: rgba(74, 124, 146, 0.16);
+  --dw-navbar-search-bg: rgba(255, 255, 255, 0.55);
+  --dw-navbar-search-border: rgba(74, 124, 146, 0.14);
+
+  /* Ink */
+  --dw-color-ink-primary: #111827;
+  --dw-color-ink-secondary: #4b5563;
+  --dw-color-ink-tertiary: #9ca3af;
+  --dw-color-ink-disabled: #d1d5db;
+
+  /* Surface — Light */
+  --dw-color-surface-canvas: #f3f6f8;
+  --dw-color-surface-base: #ffffff;
+  --dw-color-surface-sunken: #eef2f5;
+  --dw-color-surface-overlay: rgba(255, 255, 255, 0.90);
+
+  /* Border */
+  --dw-color-border-default: #dde3e8;
+  --dw-color-border-strong: #c8d2da;
+  --dw-color-border-focus: #4a7c92;
+
+  /* Semantic */
+  --dw-color-success: #16a34a;
+  --dw-color-success-muted: #dcfce7;
+  --dw-color-warning: #ca8a04;
+  --dw-color-warning-muted: #fef9c3;
+  --dw-color-danger: #dc2626;
+  --dw-color-danger-muted: #fee2e2;
+  --dw-color-info: #4a7c92;
+
+  /* Layout */
+  --dw-sidebar-width: 240px;
+  --dw-sidebar-collapsed-width: 64px;
+  --dw-sidebar-inset: 12px;
+  --dw-navbar-height: 56px;
+  --dw-panel-width: 360px;
+  --dw-page-max-width: 1440px;
+
+  /* Radius */
+  --dw-radius-sm: 4px;
+  --dw-radius-md: 6px;
+  --dw-radius-lg: 8px;
+  --dw-radius-xl: 12px;
+  --dw-radius-2xl: 16px;
+  --dw-radius-full: 9999px;
+
+  /* Shadows */
+  --dw-shadow-xs: 0 1px 2px rgba(17, 24, 39, 0.05);
+  --dw-shadow-sm: 0 1px 3px rgba(17, 24, 39, 0.08), 0 1px 2px rgba(17, 24, 39, 0.05);
+  --dw-shadow-md: 0 4px 16px rgba(17, 24, 39, 0.10), 0 2px 4px rgba(17, 24, 39, 0.06);
+  --dw-shadow-lg: 0 8px 32px rgba(17, 24, 39, 0.12), 0 4px 8px rgba(17, 24, 39, 0.07);
+  --dw-shadow-xl: 0 20px 60px rgba(17, 24, 39, 0.15), 0 8px 16px rgba(17, 24, 39, 0.08);
+  --dw-shadow-brand: 0 4px 20px rgba(74, 124, 146, 0.28), 0 1px 4px rgba(74, 124, 146, 0.15);
+
+  /* Motion */
+  --dw-duration-fast: 100ms;
+  --dw-duration-normal: 150ms;
+  --dw-duration-slow: 200ms;
+  --dw-duration-slower: 300ms;
+  --dw-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --dw-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --dw-ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Z-index */
+  --dw-z-sticky: 10;
+  --dw-z-sidebar: 20;
+  --dw-z-dropdown: 30;
+  --dw-z-drawer: 40;
+  --dw-z-modal: 50;
+  --dw-z-toast: 60;
+  --dw-z-tooltip: 70;
+}
+
+.dark {
+  --dw-color-brand-primary: #5b8fa3;
+  --dw-color-brand-primary-hover: #6a9cb0;
+  --dw-color-brand-primary-active: #4a7c92;
+  --dw-color-brand-primary-muted: rgba(74, 124, 146, 0.2);
+  --dw-color-brand-primary-subtle: rgba(74, 124, 146, 0.1);
+
+  --dw-color-ink-primary: #fafafa;
+  --dw-color-ink-secondary: #a1a1aa;
+  --dw-color-ink-tertiary: #71717a;
+  --dw-color-ink-disabled: #52525b;
+
+  --dw-color-surface-canvas: #0f0f10;
+  --dw-color-surface-base: #18181b;
+  --dw-color-surface-sunken: #27272a;
+  --dw-color-surface-overlay: rgba(24, 24, 27, 0.8);
+
+  --dw-color-border-default: #3f3f46;
+  --dw-color-border-strong: #52525b;
+
+  --dw-navbar-bg: color-mix(in srgb, #4a7c92 14%, #18181b);
+  --dw-navbar-bg-end: color-mix(in srgb, #4a7c92 10%, #141416);
+  --dw-navbar-border: rgba(74, 124, 146, 0.22);
+  --dw-navbar-search-bg: rgba(255, 255, 255, 0.04);
+  --dw-navbar-search-border: rgba(74, 124, 146, 0.2);
+
+  --dw-sidebar-bg: color-mix(in srgb, #4a7c92 16%, #18181b);
+  --dw-sidebar-bg-end: color-mix(in srgb, #4a7c92 12%, #141416);
+  --dw-sidebar-ink: rgba(255, 255, 255, 0.88);
+  --dw-sidebar-ink-dim: rgba(255, 255, 255, 0.52);
+  --dw-sidebar-ink-tertiary: rgba(255, 255, 255, 0.32);
+  --dw-sidebar-hover: rgba(255, 255, 255, 0.06);
+  --dw-sidebar-active-bg: rgba(74, 124, 146, 0.24);
+  --dw-sidebar-active-ink: #8fd4ea;
+  --dw-sidebar-border: rgba(255, 255, 255, 0.08);
+  --dw-sidebar-search-bg: rgba(255, 255, 255, 0.05);
+  --dw-sidebar-search-border: rgba(255, 255, 255, 0.1);
+  --dw-sidebar-profile-bg: rgba(255, 255, 255, 0.04);
+  --dw-sidebar-profile-border: rgba(255, 255, 255, 0.08);
+
+  --dw-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --dw-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --dw-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --dw-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --dw-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+}

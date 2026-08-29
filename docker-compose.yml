@@ -1,0 +1,24 @@
+# PostgreSQL for DreamWeavers HRMS local development
+# Usage: docker compose up -d
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: dreamweavers-postgres
+    restart: unless-stopped
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: dreamweavers
+      POSTGRES_PASSWORD: dreamweavers
+      POSTGRES_DB: dreamweavers_hrms
+    volumes:
+      - dreamweavers_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U dreamweavers -d dreamweavers_hrms']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  dreamweavers_pg_data:

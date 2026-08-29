@@ -1,0 +1,8 @@
+export { EmployeesIllustration } from './employees-illustration'
+export { CalendarIllustration } from './calendar-illustration'
+export { TasksIllustration } from './tasks-illustration'
+export { ReportsIllustration } from './reports-illustration'
+export { AutomationsIllustration } from './automations-illustration'
+export { AttendanceIllustration } from './attendance-illustration'
+export { MeetDreamsIllustration } from './meet-dreams-illustration'
+export { AdminManagementIllustration } from './admin-management-illustration'
