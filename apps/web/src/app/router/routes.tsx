@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, lazy } from 'react'
 import { createBrowserRouter, Link, Navigate, Outlet } from 'react-router-dom'
 import { AppShell, PageContainer } from '@/shared/components/layouts'
 import { PageLoader } from '@/shared/components/feedback'
@@ -6,19 +6,26 @@ import { ErrorState } from '@/shared/components/premium'
 import { Button } from '@/shared/components/ui/button'
 import { ProtectedRoute, RoleRoute, SuperAdminRoute } from '@/app/router/guards'
 import { ROUTES } from '@/shared/constants'
-import { DashboardPage } from '@/features/dashboard/pages/dashboard-page'
-import { CalendarPage } from '@/features/calendar'
-import { TaskDetailPage, TasksPage } from '@/features/tasks'
-import { EmployeeProfilePage, EmployeesPage } from '@/features/employees'
-import { TeamSpacePage, TeamsPage } from '@/features/teams'
-import { AttendancePage } from '@/features/attendance'
-import { DocumentsPage } from '@/features/documents'
-import { ReportsPage } from '@/features/reports'
-import { AdminManagementPage } from '@/features/admin-management'
-import { SettingsPage } from '@/features/settings'
-import { NotificationsPage } from '@/features/notifications'
-import { ProfilePage } from '@/features/profile'
-import { AuthLayout, ForgotPasswordPage, LoginPage, SignupPage } from '@/features/auth'
+
+const DashboardPage = lazy(() => import('@/features/dashboard/pages/dashboard-page').then((module) => ({ default: module.DashboardPage })))
+const CalendarPage = lazy(() => import('@/features/calendar').then((module) => ({ default: module.CalendarPage })))
+const TasksPage = lazy(() => import('@/features/tasks').then((module) => ({ default: module.TasksPage })))
+const TaskDetailPage = lazy(() => import('@/features/tasks').then((module) => ({ default: module.TaskDetailPage })))
+const EmployeesPage = lazy(() => import('@/features/employees').then((module) => ({ default: module.EmployeesPage })))
+const EmployeeProfilePage = lazy(() => import('@/features/employees').then((module) => ({ default: module.EmployeeProfilePage })))
+const TeamsPage = lazy(() => import('@/features/teams').then((module) => ({ default: module.TeamsPage })))
+const TeamSpacePage = lazy(() => import('@/features/teams').then((module) => ({ default: module.TeamSpacePage })))
+const AttendancePage = lazy(() => import('@/features/attendance').then((module) => ({ default: module.AttendancePage })))
+const DocumentsPage = lazy(() => import('@/features/documents').then((module) => ({ default: module.DocumentsPage })))
+const ReportsPage = lazy(() => import('@/features/reports').then((module) => ({ default: module.ReportsPage })))
+const AdminManagementPage = lazy(() => import('@/features/admin-management').then((module) => ({ default: module.AdminManagementPage })))
+const SettingsPage = lazy(() => import('@/features/settings').then((module) => ({ default: module.SettingsPage })))
+const NotificationsPage = lazy(() => import('@/features/notifications').then((module) => ({ default: module.NotificationsPage })))
+const ProfilePage = lazy(() => import('@/features/profile').then((module) => ({ default: module.ProfilePage })))
+const AuthLayout = lazy(() => import('@/features/auth').then((module) => ({ default: module.AuthLayout })))
+const ForgotPasswordPage = lazy(() => import('@/features/auth').then((module) => ({ default: module.ForgotPasswordPage })))
+const LoginPage = lazy(() => import('@/features/auth').then((module) => ({ default: module.LoginPage })))
+const SignupPage = lazy(() => import('@/features/auth').then((module) => ({ default: module.SignupPage })))
 
 function AppLayout() {
   return (

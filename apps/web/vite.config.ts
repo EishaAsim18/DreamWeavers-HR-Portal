@@ -10,6 +10,41 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    target: 'es2022',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return undefined
+
+          if (id.includes('react-router-dom') || id.includes('/react/') || id.includes('/scheduler/')) {
+            return 'react'
+          }
+          if (id.includes('@tanstack/react-query') || id.includes('@tanstack/react-table')) {
+            return 'data'
+          }
+          if (id.includes('framer-motion') || id.includes('lucide-react') || id.includes('sonner') || id.includes('class-variance-authority') || id.includes('clsx')) {
+            return 'ui'
+          }
+          if (id.includes('recharts')) {
+            return 'charts'
+          }
+          if (id.includes('@fullcalendar')) {
+            return 'calendar'
+          }
+          if (id.includes('three') || id.includes('@react-three')) {
+            return 'three'
+          }
+          if (id.includes('react-hook-form') || id.includes('@hookform/resolvers') || id.includes('zod')) {
+            return 'forms'
+          }
+
+          return 'vendor'
+        },
+      },
+    },
+  },
   server: {
     proxy: {
       '/api': {
